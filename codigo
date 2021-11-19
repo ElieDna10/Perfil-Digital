@@ -23,4 +23,4 @@ for i in sorted_values:
             break
 x = len(sorted_series)
 v = list(sorted_series)
-print("La serie en la posicion " +str(num)+" de vistas es: " +str(v[x-num])+" con " +str(series[str(v[x-num])])+" vistas.")
+print("La serie numero " +str(num)+" de tu ranking es: " +str(v[x-num])+" con " +str(series[str(v[x-num])])+" reproducciones.")
