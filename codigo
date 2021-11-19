@@ -1,0 +1,26 @@
+import csv
+
+archivo = "NetflixViewingHistory.csv"
+series = {}
+num = int(input("Escribe un numero: "))
+with open(archivo) as csv_file:
+  csv_reader = csv.reader(csv_file, delimiter = ',')
+  for fila in csv_reader:
+    episodio = fila[0]
+    episodioDatos = episodio.split(":")
+    serie = str(episodioDatos[0])
+    if (serie in series):
+      series[serie]+=1 #suma 1 a la value del nombre serie
+    else:
+     series[serie]=1
+     
+sorted_values = sorted(series.values())
+sorted_series = {}
+for i in sorted_values:
+    for k in series.keys():
+        if series[k] == i:
+            sorted_series[k] = series[k]
+            break
+x = len(sorted_series)
+v = list(sorted_series)
+print("La serie en la posicion " +str(num)+" de vistas es: " +str(v[x-num])+" con " +str(series[str(v[x-num])])+" vistas.")
